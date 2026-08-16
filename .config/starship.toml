@@ -1,0 +1,62 @@
+# ==============================================================================
+# Starship Prompt - Catppuccin Mocha Palette
+# ==============================================================================
+
+format = """
+[┌─](bold #cba6f7)$directory$git_branch$git_status$nodejs$rust$golang$python$cmd_duration
+[└─>](bold #cba6f7) """
+
+right_format = """$time"""
+
+# Continuation prompt
+continuation_prompt = "[▶▶ ](bold #cba6f7)"
+
+[directory]
+style = "bold #89b4fa"
+format = "[$path]($style) "
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+style = "bold #f5c2e7"
+format = "on [$symbol$branch]($style) "
+symbol = " "
+
+[git_status]
+style = "bold #f38ba8"
+format = "([$all_status$ahead_behind]($style) )"
+
+[nodejs]
+symbol = "󰎙 "
+style = "bold #a6e3a1"
+format = "[$symbol($version)]($style) "
+
+[rust]
+symbol = "󱘗 "
+style = "bold #fab387"
+format = "[$symbol($version)]($style) "
+
+[golang]
+symbol = "󰟓 "
+style = "bold #89dceb"
+format = "[$symbol($version)]($style) "
+
+[python]
+symbol = "󰌠 "
+style = "bold #f9e2af"
+format = "[$symbol($version)]($style) "
+
+[cmd_duration]
+min_time = 2_000
+style = "bold #f9e2af"
+format = "took [$duration]($style) "
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bold #6c7086"
+format = "[$time]($style)"
+
+[character]
+success_symbol = "[❯](bold #a6e3a1)"
+error_symbol = "[❯](bold #f38ba8)"

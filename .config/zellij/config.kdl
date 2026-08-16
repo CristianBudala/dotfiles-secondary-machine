@@ -1,0 +1,72 @@
+// ==============================================================================
+// Zellij Configuration - Catppuccin Mocha Theme
+// ==============================================================================
+
+// Theme selection
+theme "catppuccin-mocha"
+
+// Default layout
+default_layout "compact"
+
+// UI and Editor
+mouse_mode true
+pane_frames true
+simplified_ui false
+auto_layout true
+scrollback_editor "/usr/bin/nvim"
+scroll_buffer_size 10000
+
+// Clipboard integration (Wayland)
+copy_command "wl-copy"
+copy_clipboard "system"
+copy_on_select true
+
+// Session settings
+session_serialization true
+serialize_pane_viewport true
+
+// Themes
+themes {
+    catppuccin-mocha {
+        bg "#313244"
+        fg "#cdd6f4"
+        red "#f38ba8"
+        green "#a6e3a1"
+        blue "#89b4fa"
+        yellow "#f9e2af"
+        magenta "#cba6f7"
+        orange "#fab387"
+        cyan "#89dceb"
+        black "#181825"
+        white "#cdd6f4"
+    }
+}
+
+// Keybindings (Ergonomic with Alt-modifiers for quick navigation)
+keybinds clear-defaults=false {
+    normal {
+        // Quick navigation with Alt + hjkl
+        bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt j" "Alt Down" { MoveFocus "Down"; }
+        bind "Alt k" "Alt Up" { MoveFocus "Up"; }
+
+        // Quick Pane creation and resizing
+        bind "Alt n" { NewPane; }
+        bind "Alt d" { NewPane "Right"; }
+        bind "Alt r" { NewPane "Down"; }
+        bind "Alt x" { CloseFocus; }
+        bind "Alt f" { ToggleFloatingPanes; }
+        bind "Alt z" { ToggleFocusFullscreen; }
+
+        // Quick Tab Navigation
+        bind "Alt [" { GoToPreviousTab; }
+        bind "Alt ]" { GoToNextTab; }
+        bind "Alt t" { NewTab; }
+        bind "Alt 1" { GoToTab 1; }
+        bind "Alt 2" { GoToTab 2; }
+        bind "Alt 3" { GoToTab 3; }
+        bind "Alt 4" { GoToTab 4; }
+        bind "Alt 5" { GoToTab 5; }
+    }
+}
